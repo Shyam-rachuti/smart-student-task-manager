@@ -35,7 +35,7 @@ function App() {
   }
 
   return (
-    <div>
+  <div className="container">
 
       <h1>Smart Student Task Manager</h1>
 
@@ -45,7 +45,7 @@ function App() {
 
       <ul>
         {tasks.map((task, index) => (
-          <li key={index}>
+          <li className="task" key={index}>
 
             <input
               type="checkbox"
@@ -54,12 +54,7 @@ function App() {
             />
 
             <span
-              style={{
-                textDecoration:
-                  task.completed
-                    ? "line-through"
-                    : "none"
-              }}
+              className={task.completed ? "completed" : ""}
             >
               {task.text}
             </span>
@@ -81,7 +76,7 @@ function App() {
       </button>
 
     </div>
-  )
-}
+    )
+  }
 
 export default App
